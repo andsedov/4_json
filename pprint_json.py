@@ -7,10 +7,10 @@ def load_data(filepath):
         return json.load(file_object)
 
 
-def pretty_print_json(data):
-    return json.dumps(data, sort_keys=True, indent=4, ensure_ascii=False)
+def pretty_print_json(json_data):
+    return json.dumps(json_data, sort_keys=True, indent=4, ensure_ascii=False)
 
 
 if __name__ == '__main__':
-    alco_shops = load_data(sys.argv[1])
-    print(pretty_print_json(alco_shops))
+    json_data = load_data(sys.argv[1])
+    print(pretty_print_json(json_data))
