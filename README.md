@@ -1,36 +1,36 @@
-# Ближайшие бары
+# Prettify JSON
 
-Скрипт ищет самый большой и самый маленький бар в Москве, а также выводит ближайший к пользователю бар при вводе gps координат.
-Список московских баров в формате JSON можно найти по ссылке http://data.mos.ru/opendata/7710881420-bary
+The program takes a JSON file path and returns a pretty printed output.
 
-# Как запустить
+# Quickstart
 
-Скрипт требует для своей работы установленного интерпретатора Python версии 3.5
+Input: JSON file path
+Output: pretty printed JSON
 
-Запуск на Linux:
-
-```bash
-
-$ python bars.py <filepath> # possibly requires call of python3 executive instead of just python
-The biggest bar: Спорт бар «Красная машина» with 450 seats
-The smallest bar: БАР. СОКИ with 0 seats
-Enter longitude: 55.1
-Enter latitude: 37.2
-The closest bar: ('Бар Виват', 2422.32) meters
-
-```
-
-Запуск на Windows происходит аналогично.
-
-Установка зависимостей:
-В файле requirements.txt перечислены используемые в программе зависимости. Установить их можно следующим образом:
+Example of script launch on Linux, Python 3.5:
 
 ```bash
 
-$ pip install -r requirements.txt
+$ python pprint_json.py <path to file>
+[
+    {
+        "Cells": {
+            "Address": "улица Академика Павлова, дом 10",
+            "AdmArea": "Западный административный округ",
+            "ClarificationOfWorkingHours": null,
+            "District": "район Кунцево",
+            "IsNetObject": "да",
+            "Name": "Ароматный Мир",
+            "OperatingCompany": "Ароматный Мир",
+            "PublicPhone": [
+                {
+                    "PublicPhone": "(495) 777-51-95"
+                }
+            ],
+...
 
 ```
 
-# Цели проекта
+# Project Goals
 
-Код создан в учебных целях. В рамках учебного курса по веб-разработке - [DEVMAN.org](https://devman.org)
+The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
