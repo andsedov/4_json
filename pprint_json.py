@@ -7,17 +7,17 @@ def load_data(filepath):
         return json.load(file_object)
 
 
-def pretty_print_json(data_from_json):
+def pretty_format_json(data_from_json):
     return json.dumps(data_from_json, sort_keys=True, indent=4, ensure_ascii=False)
 
 
 if __name__ == '__main__':
     try:
         data_from_json = load_data(sys.argv[1])
-        print(pretty_print_json(data_from_json))
+        print(pretty_format_json(data_from_json))
     except IndexError:
-        print('File name must be specified on the command line')
-        sys.exit(1)
+        sys.exit('File name must be specified on the command line')
     except ValueError:
-        print('File must be a json')
-        sys.exit(1)
+        sys.exit('File must be a json')
+    except FileNotFoundError:
+        sys.exit('No such file or directory')
